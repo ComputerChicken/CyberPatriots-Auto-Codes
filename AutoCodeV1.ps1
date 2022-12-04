@@ -1,5 +1,5 @@
 $Password = ConvertTo-SecureString "xxxx" -AsPlainText -Force
-Write-Host "Admin Users:"
+Write-Host "Admin Users (copy + paste from readme):"
 while ( $true ) {
     $user = Read-Host
     if ( $user -eq "stop" ) {
@@ -9,7 +9,7 @@ while ( $true ) {
     Remove-LocalGroupMember -Group "Users" -Member $user -ErrorAction Ignore
     Add-LocalGroupMember -Group "Administrators" -Member $user -ErrorAction Ignore 
 }
-Write-Host "Standard Users:"
+Write-Host "Standard Users (copy + paste from readme):"
 while ( $true ) {
     $user = Read-Host
     if ( $user -eq "stop" ) {
