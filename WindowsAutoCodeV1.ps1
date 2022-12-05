@@ -1,4 +1,8 @@
 $Password = ConvertTo-SecureString "xxxx" -AsPlainText -Force
+
+$authUsers = @()
+$regUsers = Invoke-Command -ComputerName LabMachine2k16 -ScriptBlock {net user}
+
 Write-Host "Admin Users (copy + paste from readme):"
 while ( $true ) {
     $user = Read-Host
