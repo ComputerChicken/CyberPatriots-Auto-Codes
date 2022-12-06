@@ -27,7 +27,8 @@ while ( $true ) {
 Write-Host "Scanning for Unauthentic Users..."
 foreach($d in $regUsers.Split())
 {
+Write-Host $d
 	if($d -notin $authUsers) {
-		Remove-LocalUser $d -Password $Password -ErrorAction Ignore
+		Remove-LocalUser -Name $d
 	}
 }
